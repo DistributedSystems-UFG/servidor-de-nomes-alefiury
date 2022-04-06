@@ -6,9 +6,8 @@ from rpyc.utils.server import ThreadedServer
 from constCS import *
 
 
-@dataclass
 class NameServer(Service):
-    lookup_table: dict
+    lookup_table = dict()
 
     def exposed_register(self, name: str, ip_address: str, port: int) -> None:
         if name not in dict.keys(self.lookup_table):
