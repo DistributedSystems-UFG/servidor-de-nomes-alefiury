@@ -1,5 +1,3 @@
-from dataclasses import dataclass
-
 from rpyc import Service
 from rpyc.utils.server import ThreadedServer
 
@@ -11,7 +9,7 @@ class NameServer(Service):
 
     def exposed_register(self, name: str, ip_address: str, port: int) -> None:
         if name not in dict.keys(self.lookup_table):
-            self.lookup_table['name'].append((ip_address, port))
+            self.lookup_table[name].append((ip_address, port))
         else:
             print(f"Name: {name} already exists... ")
 
