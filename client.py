@@ -6,8 +6,6 @@ def main() -> None:
     conn_server_name = rpyc.connect(NAME_SERVER_HOST, NAME_SERVER_PORT)
     print(MAIN_SERVER_NAME)
     server_data = conn_server_name.root.lookup(MAIN_SERVER_NAME)
-    print(server_data)
-    print(server_data[0])
     conn = rpyc.connect(server_data[0], server_data[1])
 
     # Inputs
