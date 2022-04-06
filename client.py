@@ -7,6 +7,7 @@ def main() -> None:
     print(MAIN_SERVER_NAME)
     server_data = conn_server_name.root.lookup(MAIN_SERVER_NAME)
     print(server_data)
+    print(server_data[0], server_data[1])
     conn = rpyc.connect(server_data[0], server_data[1])
 
     # Inputs
