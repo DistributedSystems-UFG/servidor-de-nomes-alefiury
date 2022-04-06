@@ -19,7 +19,7 @@ class NameServer(Service):
 
     def exposed_lookup(self, name: str) -> tuple:
         if name in self.lookup_table.keys():
-            return self.lookup_table['name']
+            return self.lookup_table[name]
         else:
             print(f"Name: {name} does not exist... ")
 
