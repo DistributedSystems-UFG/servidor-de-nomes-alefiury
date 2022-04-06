@@ -15,6 +15,7 @@ class NameServer(Service):
         else:
             print(f"Name: {name} already exists... ")
 
+        print(self.lookup_table)
 
     def exposed_lookup(self, name: str) -> tuple:
         if name in self.lookup_table.keys():
