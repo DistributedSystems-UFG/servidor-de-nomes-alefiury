@@ -5,6 +5,7 @@ from constCS import *
 def main() -> None:
     conn_server_name = rpyc.connect(NAME_SERVER_HOST, NAME_SERVER_PORT)
     server_data = conn_server_name.root.lookup(MAIN_SERVER_NAME)
+    print(server_data)
     conn = rpyc.connect(server_data[0], server_data[1])
 
     # Inputs
