@@ -12,7 +12,7 @@ class NameServer(Service):
 
     def exposed_register(self, name: str, ip_address: str, port: str) -> None:
         if name not in self.lookup_table.keys():
-            self.lookup_table['name'].append(ip_address, port)
+            self.lookup_table['name'].append((ip_address, port))
         else:
             print(f"Name: {name} already exists... ")
 
